@@ -1,0 +1,71 @@
+@font-face {
+  font-family: 'Marcellus';
+  font-style: normal;
+  font-weight: 400;
+  src: url("../font/Marcellus.woff"), local('Marcellus-Regular');
+}
+body {
+  margin: 0px;
+  font-family: 'Marcellus', '文泉驿微米黑', '微软雅黑';
+}
+#page {
+  margin: 0px auto;
+  background: #e6e6e6;
+}
+#page #nav {
+  background: #4d4d4d;
+  color: #fff;
+  display: -webkit-flex;
+  -webkit-flex-flow: row;
+  justify-content: flex-start;
+}
+#page #nav .direction {
+  padding: 10px 40px;
+  cursor: pointer;
+}
+#page #nav .direction:hover {
+  background-color: #f0b375;
+}
+.street {
+  margin: 22px 0px;
+}
+.street a {
+  text-decoration: none;
+  font-size: 27px;
+  color: #81c1da;
+}
+.holder {
+  display: none;
+}
+.holder.open {
+  display: block;
+}
+.show {
+  -webkit-perspective: 800;
+  -webkit-backface-visibility: hidden;
+  -webkit-transform-style: preserve-3d;
+}
+.show .place {
+  -webkit-transform-origin: 0 0;
+  -webkit-perspective-origin: 0 0;
+  width: 400px;
+  height: 200px;
+  background-color: #a3a3f5;
+  text-align: center;
+  line-height: 200px;
+  font-size: 30px;
+  color: #fff;
+  cursor: pointer;
+  -webkit-transition-duration: 0.6s;
+  -webkit-transition-delay: 0.6s;
+}
+.show .place:hover {
+  -webkit-transform: rotateY(-90deg);
+  z-index: 9;
+}
+.show .place:nth-child(2n) {
+  background-color: #f98686;
+}
+.show .place:nth-child(3n) {
+  background-color: #86f986;
+}

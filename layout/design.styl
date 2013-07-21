@@ -1,0 +1,74 @@
+
+
+@font-face
+  font-family 'Marcellus'
+  font-style normal
+  font-weight 400
+  src url("../font/Marcellus.woff"), local('Marcellus-Regular')
+
+body
+  margin 0px
+  font-family 'Marcellus', '文泉驿微米黑', '微软雅黑'
+
+#page
+  margin 0px auto
+  background hsl(0,0,90)
+
+  #nav
+    background hsl(0,0,30)
+    color white
+    display -webkit-flex
+    -webkit-flex-flow row
+    justify-content flex-start
+
+    .direction
+      padding 10px 40px
+      cursor pointer
+
+      &:hover
+        background-color hsl(30,80,70)
+
+.street
+  margin 22px 0px;
+
+.street a
+    text-decoration none
+    font-size 27px
+    color hsl(197, 55%, 68%)
+
+.holder
+  display none
+
+  &.open
+    display block
+
+  $.hide
+    display none
+
+.show
+  -webkit-perspective 800 
+  -webkit-backface-visibility hidden
+  -webkit-transform-style preserve-3d
+
+  .place
+    -webkit-transform-origin 0 0
+    -webkit-perspective-origin 0 0
+    width 400px
+    height 200px
+    background-color hsl(240,80,80)
+    text-align center
+    line-height 200px
+    font-size 30px
+    color white
+    cursor pointer
+    -webkit-transition-duration 0.6s
+    -webkit-transition-delay 0.6s
+
+    &:hover
+      -webkit-transform rotateY(-90deg)
+      z-index 9
+
+  .place:nth-child(2n)
+    background-color hsl(0,90,75)
+  .place:nth-child(3n)
+    background-color hsl(120,90,75)
