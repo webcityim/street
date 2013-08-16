@@ -8,7 +8,7 @@
 body
   margin 0px
   font-family 'Marcellus', '冬青黑体简体', '文泉驿微米黑', '微软雅黑'
-  background-color hsl(240,80,80)
+  background-color hsl(240,80,13)
 
 #page
   margin 0px auto
@@ -19,6 +19,10 @@ body
     display -webkit-flex
     -webkit-flex-flow row
     justify-content flex-start
+    position fixed
+    bottom 0px
+    right 0px
+    z-index 40
 
     .direction
       padding 10px 40px
@@ -30,19 +34,36 @@ body
 .street
   margin 22px 0px;
 
-.street a
-  text-decoration none
-  font-size 27px
-  color hsl(197, 55%, 68%)
+  a
+    text-decoration none
+    font-size 27px
+    color hsl(197, 55%, 68%)
 
+#body
+  padding-top 100px
+  padding-bottom 200px
+  -webkit-transform-style preserve-3d
+  -webkit-perspective 1700px
+  -webkit-transition-timing-function ease
+  -webkit-perspective-origin left left
+
+  .category
+    width 100%
+  
 .holder
-  display none
+  position absolute
+  -webkit-transition-duration 0.6s
+  -webkit-transform-origin 20% center
 
   &.open
-    display block
+    opacity 1
+    -webkit-transform rotateY(0deg)
+    pointer-events normal
 
-  $.hide
-    display none
+  &.hide
+    opacity 0
+    -webkit-transform rotateY(-80deg)
+    pointer-events none
 
 .show
   line-height 0px
@@ -60,6 +81,7 @@ body
     cursor pointer
     overflow hidden
     -webkit-transition-duration 0.6s
+    box-shadow 0px 0px 5px hsl(0,0,50)
 
     .name
       -webkit-transition-duration 0.4s
@@ -70,9 +92,11 @@ body
       a
         color white
         text-decoration none
+        text-shadow 0px 0px 3px hsl(0,0,40)
+        white-space nowrap
 
     &:hover
-      box-shadow 0px 0px 30px hsl(240,40,30)
+      box-shadow 0px 0px 30px hsl(300,60,60)
       z-index 20
       -webkit-transform scale(1.03)
       .name
@@ -80,11 +104,14 @@ body
         text-shadow 0px 0px 6px hsl(0,0,50)
 
   .place:nth-child(2n)
-    background-color hsl(0,90,75)
+    background-color hsl(0,100,64)
+    // -webkit-transform scale(0.8)
   .place:nth-child(3n)
-    background-color hsl(120,90,75)
+    background-color hsl(120,100,64)
+    // -webkit-transform scale(0.9)
   .place:nth-child(7n)
-    background-color hsl(70,90,75)
+    background-color hsl(240,100,64)
+    // -webkit-transform scale(1.1)
 
 card(width,height)
   .place

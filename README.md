@@ -1,7 +1,11 @@
 
-[街](http://coffee-js.github.io/street/)
-======
+[Street](http://coffee-js.github.io/street/)
+------
 
-网络是社区, 是城市, 是街道.
+Build a street-like navigation for the Web.
 
-我链了一些中文社区在这里, 加上 :)
+Open with you Chrome: coffee-js.github.com/street
+
+And prepare to read some Chinese.
+
+Please help me to add sites and make better design here, thanks.
