@@ -2,7 +2,7 @@
 exports.map =
   coding:
     zhihu:
-      name: 'zhihu'
+      name: '知乎'
       desc: '一个真实的网络问答社区，帮助你寻找答案，分享知识。'
       logo: 'zhihu.png'
       bg_color: '#0078d8'
@@ -81,6 +81,31 @@ exports.map =
       desc: 'Go 语言学习园地'
       logo: 'golang.png'
       url: 'http://studygolang.com/'
+  programming:
+    codewall:
+      name: 'coderwall'
+      url: 'https://coderwall.com/welcome'
+    github:
+      name: 'Github'
+      url: 'https://github.com/'
+    echojs:
+      name: 'Echo JS'
+      url: 'http://www.echojs.com/'
+    hacknews:
+      name: 'Hacker News'
+      url: 'https://news.ycombinator.com/'
+    bitcast:
+      name: 'Bit Cast'
+      url: 'https://www.bitcast.io/'
+    tdjs:
+      name: 'Test-Driven JavaScript'
+      url: 'http://www.letscodejavascript.com/'
+    stackexchange:
+      name: 'StackExchange'
+      url: 'http://stackexchange.com/sites'
+    nettuts:
+      name: 'Nettuts'
+      url: 'http://net.tutsplus.com/'
   design:
     dribbble:
       name: 'dribbble'
@@ -125,3 +150,12 @@ exports.map =
       desc: 'For Professional Web Designers and Developers'
       url: 'http://www.smashingmagazine.com/'
       logo: 'smashing.png'
+    unheap:
+      name: 'Unheap'
+      url: 'http://www.unheap.com/'
+    visually:
+      name: 'visual.ly'
+      url: 'http://visual.ly/'
+    dn:
+      name: 'Designer News'
+      url: 'https://news.layervault.com/'

@@ -6,11 +6,11 @@
 }
 body {
   margin: 0px;
-  font-family: 'Marcellus', '文泉驿微米黑', '微软雅黑';
+  font-family: 'Marcellus', '冬青黑体简体', '文泉驿微米黑', '微软雅黑';
+  background-color: #a3a3f5;
 }
 #page {
   margin: 0px auto;
-  background: #e6e6e6;
 }
 #page #nav {
   background: #4d4d4d;
@@ -41,31 +41,92 @@ body {
   display: block;
 }
 .show {
-  -webkit-perspective: 800;
-  -webkit-backface-visibility: hidden;
-  -webkit-transform-style: preserve-3d;
+  line-height: 0px;
 }
 .show .place {
-  -webkit-transform-origin: 0 0;
-  -webkit-perspective-origin: 0 0;
-  width: 400px;
-  height: 200px;
+  position: relative;
+  display: inline-block;
+  left: auto;
+  top: auto;
   background-color: #a3a3f5;
   text-align: center;
   line-height: 200px;
   font-size: 30px;
   color: #fff;
   cursor: pointer;
+  overflow: hidden;
   -webkit-transition-duration: 0.6s;
-  -webkit-transition-delay: 0.6s;
+}
+.show .place .name {
+  -webkit-transition-duration: 0.4s;
+  -webkit-transition-delay: 0.3s;
+  -webkit-transform: scale(1);
+  -webkit-font-smoothing: subpixel-antialiased;
+}
+.show .place .name a {
+  color: #fff;
+  text-decoration: none;
 }
 .show .place:hover {
-  -webkit-transform: rotateY(-90deg);
-  z-index: 9;
+  box-shadow: 0px 0px 30px #2e2e6b;
+  z-index: 20;
+  -webkit-transform: scale(1.03);
+}
+.show .place:hover .name {
+  -webkit-transform: scale(1.5);
+  text-shadow: 0px 0px 6px #808080;
 }
 .show .place:nth-child(2n) {
   background-color: #f98686;
 }
 .show .place:nth-child(3n) {
   background-color: #86f986;
+}
+.show .place:nth-child(7n) {
+  background-color: #e5f986;
+}
+@media (max-width: 300px) {
+  .place {
+    width: 100%;
+    height: 140px;
+  }
+  .place .name {
+    line-height: 140px;
+  }
+}
+@media (min-width: 300px) and (max-width: 600px) {
+  .place {
+    width: 50%;
+    height: 200px;
+  }
+  .place .name {
+    line-height: 200px;
+  }
+}
+@media (min-width: 600px) and (max-width: 1200px) {
+  .place {
+    width: 25%;
+    height: 240px;
+  }
+  .place .name {
+    line-height: 240px;
+  }
+}
+@media (min-width: 1200px) and (max-width: 2000px) {
+  .place {
+    width: 20%;
+    height: 240px;
+  }
+  .place .name {
+    line-height: 240px;
+  }
+}
+@media (min-width: 2000px) {
+  .place {
+    width: 12.5%;
+    height: 240px;
+  }
+  .place .name {
+    line-height: 240px;
+  }
 }

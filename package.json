@@ -1,0 +1,28 @@
+{
+  "name": "street",
+  "version": "0.0.0",
+  "description": "a small page for streets",
+  "main": "index.js",
+  "scripts": {
+    "test": "node-dev dev.coffee"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/coffee-js/street.git"
+  },
+  "keywords": [
+    "street"
+  ],
+  "author": "jiyinyiyong",
+  "license": "BSD",
+  "bugs": {
+    "url": "https://github.com/coffee-js/street/issues"
+  },
+  "devDependencies": {
+    "coffeeify": "~0.5.1",
+    "zepto-browserify": "~1.0.0"
+  },
+  "dependencies": {
+    "lilyturf": "~0.3.1"
+  }
+}

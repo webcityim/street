@@ -1,8 +1,9 @@
 
 # load HTML
 
-map = require('./meta.coffee').map
-html = require('lilyturf').html
+{map} = require './meta.coffee'
+{html} = require 'lilyturf'
+{$} = require 'zepto-browserify'
 
 main_page = (data) ->
   html ->
@@ -17,17 +18,9 @@ main_page = (data) ->
             @div class: 'show',
               for name, site of list
                 @div class: 'place', 'data-name': name,
-                  @text site.name
-            @div class: 'detail',
-              for name, site of list
-                @div class: 'card holder', 'data-name': name,
-                  @div class: 'name', (@text site.name)
-                  @div class: 'link',
-                    @a href: site.url,  (@text site.url)
-                  if site.logo?
-                    @div class: 'logo', style: "background-color: #{site.bg_color}",
-                      @img src: 'pic/' + site.logo
-                  @div class: 'desc', (@text site.desc or '')
+                  @div class: 'name',
+                    @a href: site.url, target: '_blank',
+                      @text site.name
 
 $('body').html main_page map
 

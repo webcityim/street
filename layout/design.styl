@@ -1,5 +1,4 @@
 
-
 @font-face
   font-family 'Marcellus'
   font-style normal
@@ -8,11 +7,11 @@
 
 body
   margin 0px
-  font-family 'Marcellus', '文泉驿微米黑', '微软雅黑'
+  font-family 'Marcellus', '冬青黑体简体', '文泉驿微米黑', '微软雅黑'
+  background-color hsl(240,80,80)
 
 #page
   margin 0px auto
-  background hsl(0,0,90)
 
   #nav
     background hsl(0,0,30)
@@ -32,9 +31,9 @@ body
   margin 22px 0px;
 
 .street a
-    text-decoration none
-    font-size 27px
-    color hsl(197, 55%, 68%)
+  text-decoration none
+  font-size 27px
+  color hsl(197, 55%, 68%)
 
 .holder
   display none
@@ -46,29 +45,61 @@ body
     display none
 
 .show
-  -webkit-perspective 800 
-  -webkit-backface-visibility hidden
-  -webkit-transform-style preserve-3d
+  line-height 0px
 
   .place
-    -webkit-transform-origin 0 0
-    -webkit-perspective-origin 0 0
-    width 400px
-    height 200px
+    position relative
+    display inline-block
+    left auto
+    top auto
     background-color hsl(240,80,80)
     text-align center
     line-height 200px
     font-size 30px
     color white
     cursor pointer
+    overflow hidden
     -webkit-transition-duration 0.6s
-    -webkit-transition-delay 0.6s
+
+    .name
+      -webkit-transition-duration 0.4s
+      -webkit-transition-delay 0.3s
+      -webkit-transform scale(1)
+      -webkit-font-smoothing subpixel-antialiased
+
+      a
+        color white
+        text-decoration none
 
     &:hover
-      -webkit-transform rotateY(-90deg)
-      z-index 9
+      box-shadow 0px 0px 30px hsl(240,40,30)
+      z-index 20
+      -webkit-transform scale(1.03)
+      .name
+        -webkit-transform scale(1.5)
+        text-shadow 0px 0px 6px hsl(0,0,50)
 
   .place:nth-child(2n)
     background-color hsl(0,90,75)
   .place:nth-child(3n)
     background-color hsl(120,90,75)
+  .place:nth-child(7n)
+    background-color hsl(70,90,75)
+
+card(width,height)
+  .place
+    width width
+    height height
+    .name
+      line-height height
+
+@media (max-width: 300px)
+  card(100%, 140px)
+@media (min-width: 300px) and (max-width: 600px)
+  card(50%, 200px)
+@media (min-width: 600px) and (max-width: 1200px)
+  card(25%, 240px)
+@media (min-width: 1200px) and (max-width: 2000px)
+  card(20%, 240px)
+@media (min-width: 2000px)
+  card(12.5%, 240px)
