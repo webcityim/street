@@ -1,11 +1,5 @@
 
-[Street](http://coffee-js.github.io/street/)
-------
+Street
+----
 
-Build a street-like navigation for the Web.
-
-Open with you Chrome: coffee-js.github.com/street
-
-And prepare to read some Chinese.
-
-Please help me to add sites and make better design here, thanks.
+Street-like navigation for the Web.
