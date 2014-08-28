@@ -1,4 +1,6 @@
 
+React = require 'react'
+
 window.$ = React.DOM
 window.$$ = $$ = {}
 

@@ -1,6 +1,10 @@
 
-
+require './utils/extend'
 React = require 'react'
 meta = require './meta'
 
-console.log React
+AppComponent = require './component/app'
+siteStore = require './store/site'
+
+React.renderComponent AppComponent({data: siteStore.get()}),
+  document.body

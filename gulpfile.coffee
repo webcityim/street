@@ -16,6 +16,7 @@ sequence = require 'run-sequence'
 prefixer = require 'gulp-autoprefixer'
 cssmin = require 'gulp-cssmin'
 clean = require 'gulp-clean'
+transform = require 'vinyl-transform'
 
 project = 'jiyinyiyong/street/index.html'
 dev = yes
@@ -38,6 +39,7 @@ gulp.task 'watch', ->
   gulp
   .src 'cirru/*'
   .pipe watch()
+  .pipe plumber()
   .pipe html(data: {dev: yes})
   .pipe gulp.dest('./')
   .pipe reloader(project)
@@ -49,11 +51,17 @@ gulp.task 'watch', ->
   .pipe (coffee bare: yes)
   .pipe (gulp.dest 'build/js/')
 
-  watch glob: './build/js/**/*.js', ->
-    gulp.run 'js'
+  watch glob: 'build/js/**/*.js', (files) ->
     gulp
-    .src 'package.json', read: no
+    .src './build/js/main.js'
+    .pipe plumber()
+    .pipe transform (filename) ->
+      b = browserify filename
+      b.external 'react'
+      b.bundle()
+    .pipe gulp.dest('build/')
     .pipe reloader(project)
+    return files
 
 gulp.task 'js', ->
   b = browserify debug: no

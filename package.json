@@ -26,7 +26,8 @@
     "rsyncwrapper": "^0.4.1",
     "run-sequence": "^0.3.6",
     "vinyl-buffer": "0.0.0",
-    "vinyl-source-stream": "^0.1.1"
+    "vinyl-source-stream": "^0.1.1",
+    "vinyl-transform": "0.0.1"
   },
   "description": "Logo of Memkits ----",
   "dependencies": {},
